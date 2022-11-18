@@ -1,0 +1,18 @@
+<div class="banner">
+  <div class="container">
+    <h1><strong><%= @list.name %></strong></h1>
+    <%= link_to 'Add a movie', new_list_bookmark_path(@list), class:"btn btn-success ml-5" %>
+  </div>
+</div>
+
+<div class="container p-5">
+  <div class="container">
+      <% @list.bookmarks.each do |bookmark| %>
+        <div class="cards">
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://source.unsplash.com/random/?cinema+<%= bookmark.movie.title %>)">
+
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>
